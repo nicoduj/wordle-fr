@@ -829,7 +829,7 @@ export default {
             const wordID = this.getWordID()
             const middle = this.archivesMode ? `archive${wordID > 0 ? ` #${wordID}`:''} [${this.archivesDate.format('DD/MM/YYYY')}]` : `#${wordID}`
 
-            const title = `Le Mot (@WordleFR) ${middle} ${this.currentAttempt <= NB_ATTEMPTS ? this.currentAttempt : '💀' }/${NB_ATTEMPTS}\n\n`;
+            const title = `Le Mot du jour pour Emilie ${middle} ${this.currentAttempt <= NB_ATTEMPTS ? this.currentAttempt : '💀' }/${NB_ATTEMPTS}\n\n`;
             let schema = this.results.slice(0, this.currentAttempt).map((result) => {
                 return result.map((letter) => {
                     if (letter === 'correct') {
@@ -841,7 +841,7 @@ export default {
                     }
                 }).join('');
             }).join('\n');
-            const url = "https://wordle.louan.me";
+            const url = "https://nicodujhome.dujardin.io:7890";
 
             let sharedContent = title + schema;
 
