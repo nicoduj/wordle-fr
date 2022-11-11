@@ -12,24 +12,16 @@
                 </div>
                 <div class="game-title" v-if="!archivesMode"><!--MORDLE-->
                     <div class="title">
-                        <div class="letter partial">E</div>
+                        <div class="letter partial">A</div>
+                        <div class="letter incorrect">V</div>
+                        <div class="letter incorrect">A</div>
                         <div class="letter incorrect">N</div>
-                        <div class="space"></div>
-                        <div class="letter correct">R</div>
-                        <div class="letter incorrect">O</div>
-                        <div class="letter incorrect">U</div>
                         <div class="letter incorrect">T</div>
-                        <div class="letter incorrect">E</div>
-                        <div class="space"></div>
-                        <div class="letter partial">V</div>
-                        <div class="letter incorrect">E</div>
-                        <div class="letter incorrect">R</div>
-                        <div class="letter incorrect">S</div>
                         <div class="space"></div>
                         <div class="letter correct">N</div>
-                        <div class="letter correct">O</div>
-                        <div class="letter correct">E</div>
-                        <div class="letter correct">L</div>                        
+                        <div class="letter incorrect">O</div>
+                        <div class="letter incorrect">E</div>
+                        <div class="letter incorrect">L</div>                    
                     </div>
                 </div>
                 <div class="archives-selector" v-if="archivesMode">
@@ -92,9 +84,10 @@
                         </div>
                         <h2>Comment jouer ?</h2>
                         <div class="help-content">
-                            <p>Ce jeu reprend exactement le même concept que le <a href="https://www.powerlanguage.co.uk/wordle/" target="_blank">Wordle</a>, mais en français.</p>
-                            <p>Chaque jour, un mot de 5 lettres est choisi aléatoirement. Vous devez le deviner en 6 essais.</p>
-                            <p>À chaque essai, les lettres du mot que vous avez proposé changeront de couleur en fonction de à quel point vous êtes proche de le trouver.</p>
+                            <p>Ce jeu est pour toi mon Emilie :)</p>
+                            <p>Chaque jour, j'ai choisi un mot de 5 lettres que tu devras trouver en 6 essais, comme le vrai jeu.</p>
+                            <p>Tu devras noter la lettre qui correspond au chiffre de la case de ton calendrier.</p>
+                            <p>Ainsi, tu auras le mot de passe de ton cadeau (qui fera 24 lettres majuscules).</p>
                             <div class="help-exemple">
                                 <div class="help-word">
                                     <div class="help-letter-container correct" :class="{ 'color-blind': colorBlindMode }">
@@ -274,7 +267,7 @@
                             <div class="credits">
                                 <h2>Crédits</h2>
                                 <p>
-                                    En route vers Noël !!!! Tu me détestes hein :) ? 
+                                    Tu me détestes hein :) ? 
                                 </p>
                             </div>
                         </div>
