@@ -1,5 +1,5 @@
 <template>
-    <div id="game">
+    <div id="game" :style="{'background-image':'url(/img/background.jpg)'}">
         <header>
             <div class="header-container">
                 <div class="header-left">
@@ -12,12 +12,24 @@
                 </div>
                 <div class="game-title" v-if="!archivesMode"><!--MORDLE-->
                     <div class="title">
-                        <div class="letter correct">L</div>
+                        <div class="letter partial">E</div>
+                        <div class="letter incorrect">N</div>
+                        <div class="space"></div>
+                        <div class="letter correct">R</div>
+                        <div class="letter incorrect">O</div>
+                        <div class="letter incorrect">U</div>
+                        <div class="letter incorrect">T</div>
                         <div class="letter incorrect">E</div>
                         <div class="space"></div>
-                        <div class="letter partial">M</div>
-                        <div class="letter incorrect">O</div>
-                        <div class="letter incorrect">T</div>
+                        <div class="letter partial">V</div>
+                        <div class="letter incorrect">E</div>
+                        <div class="letter incorrect">R</div>
+                        <div class="letter incorrect">S</div>
+                        <div class="space"></div>
+                        <div class="letter correct">N</div>
+                        <div class="letter correct">O</div>
+                        <div class="letter correct">E</div>
+                        <div class="letter correct">L</div>                        
                     </div>
                 </div>
                 <div class="archives-selector" v-if="archivesMode">
@@ -205,12 +217,6 @@
                                     <p>{{resultsCopied ? 'Copié !' : 'Partager'}}</p>
                                 </div>
                             </div>
-                            <div class="ctas">
-                                <a href="https://utip.io/louanben" target="_blank" class="btn support-btn">
-                                    <img class="icon" src="/icons/heart.svg" />
-                                    <p>Soutenir l'auteur du projet</p>
-                                </a>
-                            </div>
                           <textarea id="clipboard-buffer"></textarea>
                         </div>
                     </div>
@@ -268,19 +274,7 @@
                             <div class="credits">
                                 <h2>Crédits</h2>
                                 <p>
-                                    Jeu développé par <a href="https://twitter.com/louanben" target="_blank">@louanben</a>.
-                                </p>
-                                <p>
-                                    Concept et design librement inspirés de <strong>Wordle</strong> par <a href="https://twitter.com/powerlanguish" target="_blank">@powerlanguish</a> (Josh Wardle).
-                                </p>
-                                <p>
-                                    Merci à <a href="https://twitter.com/Richiesque" target="_blank">@Richiesque</a> pour son aide précieuse, ainsi qu'à <a href="https://twitter.com/Reelwens" target="_blank">@Reelwens</a> pour le design !
-                                </p>
-                                <p>
-                                    Pour toute demandes, contacter <strong>@louanben</strong> sur Twitter, ou bien par mail : <strong>louanben.pro@gmail.com</strong>.
-                                </p>
-                                <p>
-                                    <strong>WordleFR</strong> est un projet <a href="https://github.com/louanben/wordle-fr" target="_blank">open-source</a>.
+                                    En route vers Noël !!!! Tu me détestes hein :) ? 
                                 </p>
                             </div>
                         </div>
@@ -551,16 +545,11 @@ export default {
         },
         async getWordOfTheDay() {
             const date = this.archivesMode ? this.archivesDate : this.today;
-            const formatedDate = date.format('YYYY-M-D');
-            const seed = seedrandom(formatedDate);
-            const random = seed();
-            this.wordOfTheDay = this.words[Math.floor(random * (this.words.indexOf('PIZZA') + 1))];
+            const formatedDate = date.format('D');
+            //const seed = seedrandom(formatedDate);
+            //const random = seed();
+            this.wordOfTheDay = this.words[formatedDate-1];
 
-            // 👩
-            console.log(formatedDate);
-            if (formatedDate === '2022-3-8') {
-                this.wordOfTheDay = 'DROIT';
-            }
         },
         canChangeArchivesDate (nbDays) {
             if (nbDays > 0 && this.archivesDate >= this.yesterday)
