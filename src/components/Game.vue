@@ -88,7 +88,7 @@
                             <p>Chaque jour, j'ai choisi un mot de 5 lettres que tu devras trouver en 6 essais, comme le vrai jeu.</p>
                             <p>Tu devras noter la lettre qui correspond au chiffre de la case de ton calendrier.</p>
                             <p>Ainsi, tu auras le mot de passe de ton cadeau (qui fera 24 lettres majuscules).</p>
-                            <a href="`/welcomePage/`" target="_blank">
+                            <a href="/welcomePage/" target="_blank">
                             Plus d'informations ici
                             </a>
                             <div class="help-exemple">
